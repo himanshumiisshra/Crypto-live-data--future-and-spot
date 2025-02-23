@@ -1,0 +1,42 @@
+/* src/App.css */
+
+.live-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .chart-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .chart-card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .chart-card canvas {
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .chart-card {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .chart-card h2 {
+      font-size: 20px;
+    }
+  }
+  
