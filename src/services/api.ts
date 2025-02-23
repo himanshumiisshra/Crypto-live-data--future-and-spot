@@ -1,15 +1,15 @@
 import axios from "axios";
 
-// Helper function to extract and normalize price data
+
 const normalizeData = (data: any[], exchange: string, priceKey: string, symbolKey: string) => {
   return data.map((item) => ({
     exchange,
-    symbol: item[symbolKey].replace(/[-_]/g, "").toUpperCase(), // Normalize symbol format
+    symbol: item[symbolKey].replace(/[-_]/g, "").toUpperCase(), 
     price: parseFloat(item[priceKey]),
   }));
 };
 
-// Fetch Spot Prices from Binance
+
 export const fetchBinanceSpot = async () => {
   try {
     const response = await axios.get("https://api.binance.com/api/v3/ticker/price");
@@ -20,7 +20,7 @@ export const fetchBinanceSpot = async () => {
   }
 };
 
-// Fetch Spot Prices from Bybit
+
 export const fetchBybitSpot = async () => {
   try {
     const response = await axios.get("https://api.bybit.com/v2/public/tickers");
@@ -31,7 +31,7 @@ export const fetchBybitSpot = async () => {
   }
 };
 
-// Fetch Spot Prices from KuCoin
+
 export const fetchKuCoinSpot = async () => {
   try {
     const response = await axios.get("https://api.kucoin.com/api/v1/market/allTickers");
@@ -42,7 +42,7 @@ export const fetchKuCoinSpot = async () => {
   }
 };
 
-// Fetch Spot Prices from MEXC
+
 export const fetchMexcSpot = async () => {
   try {
     const response = await axios.get("https://www.mexc.com/api/v2/market/ticker");
@@ -53,7 +53,7 @@ export const fetchMexcSpot = async () => {
   }
 };
 
-// Fetch all exchanges together
+
 export const fetchAllSpotData = async () => {
   const [binance, bybit, kucoin, mexc] = await Promise.all([
     fetchBinanceSpot(),

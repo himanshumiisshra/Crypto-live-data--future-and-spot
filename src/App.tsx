@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import './styles.css';
 import LiveChart from './components/LiveChart';

@@ -1,9 +1,7 @@
-// src/components/CryptoData.tsx
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// For WebSocket if needed
 import { io } from "socket.io-client";
 
 const CryptoData: React.FC = () => {
@@ -54,17 +52,14 @@ const CryptoData: React.FC = () => {
     fetchKuCoinData();
     fetchMexcData();
 
-    // WebSocket setup for live updates if necessary
     const socket = io("wss://stream.binance.com:9443/ws/!ticker@arr");
 
     socket.on("message", (data: any) => {
-      // Handle incoming data
       const newData = JSON.parse(data);
-      // Update state or call a function to handle live data
     });
 
     return () => {
-      socket.disconnect(); // Clean up WebSocket
+      socket.disconnect(); 
     };
   }, []);
 

@@ -6,7 +6,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 const CryptoChart: React.FC = () => {
   const [chartData, setChartData] = useState<any[]>([]);
 
-  // Mock Data for illustration purposes
   const getChartData = () => {
     return [
       { time: "2025-02-01", price: 45000 },
@@ -18,7 +17,7 @@ const CryptoChart: React.FC = () => {
   };
 
   useEffect(() => {
-    setChartData(getChartData()); // Fetch real data and update the state
+    setChartData(getChartData()); 
   }, []);
 
   return (

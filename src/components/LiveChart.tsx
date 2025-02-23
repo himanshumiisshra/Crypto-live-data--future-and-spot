@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, Title, Tooltip, Legend, L
 ChartJS.register(CategoryScale, LinearScale, Title, Tooltip, Legend, LineElement, PointElement);
 
 const LiveChart = () => {
-  const [selectedType, setSelectedType] = useState("Spot"); // Dropdown selection
+  const [selectedType, setSelectedType] = useState("Spot"); 
   const [data, setData] = useState<any>({
     labels: [],
     datasets: [
